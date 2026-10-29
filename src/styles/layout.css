@@ -1,0 +1,130 @@
+/* ─── Navbar ─────────────────────────────────────────── */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  height: 64px;
+}
+
+.navbar__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__logo {
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.navbar__logo span {
+  color: var(--color-primary);
+}
+
+.navbar__links {
+  display: flex;
+  gap: var(--space-5);
+  list-style: none;
+}
+
+.navbar__links a {
+  color: var(--color-text-muted);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  transition: color 0.15s;
+}
+
+.navbar__links a:hover {
+  color: var(--color-primary);
+}
+
+.navbar__toggle {
+  display: none;
+  font-size: 24px;
+  color: var(--color-text);
+}
+
+@media (max-width: 768px) {
+  .navbar__links {
+    display: none;
+  }
+  .navbar__links--open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--color-surface);
+    padding: var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .navbar__toggle {
+    display: block;
+  }
+}
+
+/* ─── Footer ─────────────────────────────────────────── */
+.footer {
+  background: var(--color-bg-alt);
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-8) var(--space-4) var(--space-5);
+  margin-top: var(--space-10);
+}
+
+.footer__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+  justify-content: space-between;
+}
+
+.footer__col h4 {
+  font-size: var(--fs-base);
+  margin-bottom: var(--space-3);
+}
+
+.footer__col ul {
+  list-style: none;
+}
+
+.footer__col a {
+  color: var(--color-text-muted);
+  font-size: var(--fs-sm);
+  line-height: 2;
+}
+
+.footer__col a:hover {
+  color: var(--color-primary);
+}
+
+.footer__bottom {
+  max-width: var(--container-max);
+  margin: var(--space-6) auto 0;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+/* ─── Main ───────────────────────────────────────────── */
+.main {
+  min-height: calc(100vh - 64px - 200px);
+  padding: var(--space-6) 0;
+}
+
+
+.navbar__links a.active {
+  color: var(--color-primary);
+  font-weight: 700;
+}
